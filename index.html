@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cryptoniacs_lab //Swiss Hardware & Co</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="tty-login" class="tty-screen">
+		<div class="tty-box">
+			<pre class="ascii-logo">
+	 ______			__		_
+	/ ____/_____  ______   / /_____  ____  (_)___ ___________
+       / /   / ___/ / / / __ \/ __/ __ \/ __ \/ / __ '/ ___/ ___/
+      / /___/ /  / /_/ / /_/ / /_/ /_/ / / / / / /_/ / /__(__  )
+      \____/_/   \__, / .___/\__/\____/_/ /_/_/\__,_/\___/____/
+      		/____/_/   _LAB // SWISS HARDWARE & CO
+			</pre>
+			<p class="tty-info">Linux 6.x (tty1) - Cryptoniacs_lab Storefront [CH]</p>
+
+			<form id="login-form">
+				<div class="input-row">
+					<label for="username">login as (username):</label>
+					<input type="text" id="username" placeholder="es. neo, anon, guest..." required>
+				</div>
+				<div class="input-row">
+					<label for="hostname">target machine (hostname):</label>
+					<input type="text" id="hostname" placeholder="es. matrix, omen, rig..." required>
+				</div>
+				<div class="tty actions">
+				<button type="submit" class="btn-terminal">[ ENTER SESSION ]</button>
+				<button type="button" id="skip-login" class="btn-ghost">enter as anon@swiss-node &rarr;</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="shop-desktop" class="hidden">
+		
+		<header class="i3-topbar">
+			<div class="workspaces">
+				<span class="ws active">1: hardware_lab</span>
+				<span class="ws">2: dual_boot_ready</span>
+			</div>
+			<div class="session-info">
+				Session: <strong id="display-session">guest@rig</strong> | Direct Price: <strong>CHF (0% Fees)</strong>
+				<button id="logout-btn" class="btn-logout">[logout]</button>
+			</div>
+		</header>
+
+		<section class="shell-search-container">
+			<div class="shell-header">
+				Type a command or filter the search (ex. <code>omen</code>, <code>aio</code>, <code>dell</code>, or <code>clear</code>)
+			</div>
+			<div class="shell-prompt-line">
+				<span id="prompt-label" class="user-color">guest@rig:~/cryptoniacs_lab$</span>
+				<span class="cmd-color">grep -i</span>
+				<input type="text" id="search-input" placeholder='search specs or models...' autocomplete="off">
+				<button id="clear-btn" class="btn-clear hidden">[ESC]</button>
+			</div>
+		</section>
+
+		<main class="catalog-grid">
+			<!-- Card 1 -->
+			<article class="hardware-card" data-keywords="hp omen gaming pc i7 gtx 1080 8gb 16gb ram 1tb">
+				<div>
+					<div class="card-header">
+						<span class="status-tag">[READY TO SHIP]</span>
+						<span class="badge-maxed">MAXED OUT BUILD</span>
+					</div>
+
+
+					<!-- <img src="img/omen.jpg" alt="HP Omen 870" class="product-img"> -->
+
+					<h3>HP Omen 870 Gaming-PC</h3>
+					<p class="specs-text">
+						* CPU: Intel Core i7-7700<br>
+						* GPU: NVIDIA ROG Strix GTX 1080 8GB<br>
+						* RAM: 16GB DDR4 (Upgradable)<br>
+						* PSU: be quiet! 600W<br>
+						* Storage: 1TB SSD (Upgradable)
+					</p>
+
+					<div class="config-box">
+						<label for="os-omen">Pre-install OS per <span class="dynamic-host">rig</span>:</label>
+						<select id="os-omen" class="os-select">
+							<option value="Any GNU/Linux Distro">Any GNU/Linux Distribution (Standard or Custom)</option>
+							<option value="Windows 11">Windows 11 (Activated & Updated)</option>
+							<option value="Dual-Boot (GNU/Linux + Win11)">Dual-Boot (GNU/Linux + Windows)</option>
+						</select>
+						
+						<p class="hardware-note">* Maxed out hardware configuration.</p>
+					</div>
+				</div>
+
+				<div class="price-footer">
+					<div>
+						<span class="ricardo-ref">On Ricardo: 469.- CHF</span>
+						<span class="buy-price">429.- CHF</span>
+					</div>
+					<button class="btn-terminal order-btn" data-product="HP Omen 870 (i7-7700 / GTX 1080)" data-base="429" data-os="os-omen">
+						./order.sh
+					</button>
+				</div>
+			</article>
+
+			<!-- Card 2 -->
+			<article class="hardware-card" data-keywords="dell inspiron 5400 office all in one aio 23 fhd i5 11 gen 8gb ram 512gb">
+				<div>
+					<div class="card-header">
+						<span class="status-tag">[READY TO SHIP]</span>
+						<span class="badge-upgrade">UPGRADABLE</span>
+					</div>
+
+					<!-- <img src="img/dell.jpg" alt="Dell Inspiron 540" class="product-img"> -->
+
+					<h3>Dell Inspiron All-in-One 23" FHD</h3>
+					<p class="specs-text">
+						* CPU: Intel Core i5 11. Gen<br>
+						* Display: 23.8" Full HD IPS<br>
+						* RAM: 8GB DDR4 (Upgradable)<br>
+						* Storage: 512GB NVMe SSD (Upgradable)
+					</p>
+
+					<div class="config-box">
+						<label for="os-dell">Pre-install OS per <span class="dynamic-host">rig</span>:</label>
+						<select is="os-dell" class="os-select">
+							<option value="Any GNU/Linux Distro">Any GNU/Linux Distribution (Standard or Custom)</option>
+							<option value="Windows 11">Windows 11 (Activated & Updated)</option>
+							<option value="Dual-Boot (GNU/Linux + Win11)">Dual-Boot (GNU/Linux + Windows)</option>
+						</select>
+
+						<label class="upgrade-check">
+							<input type="checkbox" id="dell-ram-upgrade" data-price="25">
+							<span>+25 CHF: Upgrade RAM a 16GB DDR4</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="price-footer">
+					<div>
+						<span class="ricard-ref">On Ricardo: 229.- CHF</span>
+						<span class="buy-price">229.- CHF</span>
+					</div>
+					<button class="btn-terminal order-btn" data-product="Dell Inspiron 23 AIO (i5 11.Gen)" data-base="199" data-os="os-dell" data-upgrade="dell-ram-upgrade">
+						./order.sh
+					</button>
+				</div>
+			</article>
+		</main>
+
+		<div id="no-results" class="empty-output hidden">
+			bash: no components were found for this query. Type <code>clear</code> to reset.
+		</div>
+
+		<footer class="i3-bottombar">
+			<span>CRYPTO / QR-IBAN / Pickup CH</span>
+			<span>Privatverkauf ohne Gewaehrleistung (DOA-Garantie)</span>
+			<span>cryptoniacs_lab // v1.0</span>
+		</footer>
+	</div>
+
+	<div id="order-modal" class="modal-overlay hidden">
+		<div class="tty-box modal-content">
+			<div class="modal-header">
+				<span>[ CHECKOUT_SCRIPT.SH ]</span>
+				<button id="close-modal" class="btn-logout">[X]</button>
+			</div>
+
+			<div class="payment-selector">
+				<span class="pay-label">Choose preferred payment:</span>
+				<div class="pay-buttons">
+					<button type="button" class="pay-btn active" data-method="XMR">[ Monero (XMR) ]</button>
+					<button type="button" class="pay-btn active" data-method="BTC">[ Bitcoin (BTC) ]</button>
+					<button type="button" class="pay-btn active" data-method="IBAN">[ IBAN CH (CHF) ]</button>
+				</div>
+			</div>
+
+			<pre id="order-summary" class="order-receipt"></pre>
+
+			<p class="modal-hint" id="modal-hint-text">
+				Send the equivalent in XMR and share your TXID via email in order to start the PostPac expedition.
+			</p>
+
+			<div class="tty-actions">
+				<button id="copy-order-btn" class="btn-terminal">[ COPY ORDER DATA ]</button>
+				<a id="mailto-link" href="#" class="btn-ghost">Send Email &rarr;</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
