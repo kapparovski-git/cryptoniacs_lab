@@ -89,7 +89,7 @@ dellUpgradeCheck.addEventListener("change", () => {
 	dellPriceDisplay.textContent = `${total}.- CHF`;
 });
 
-const modal = document.getElementById("order-modal");
+/*const modal = document.getElementById("order-modal");
 const orderSummary = document.getElementById("order-summary");
 const mailtoLink = document.getElementById("mailto-link");
 
@@ -160,7 +160,7 @@ document.getElementById("copy-order-btn").addEventListener("click" () => {
 		Amount:   Equivalent in ${currentOrder.price}.- CHF
 		Wallet:   ${addressXMR}`;
 			modalHint.textContent = "Send the equivalent in XMR, after the payment share the TXID via email to confirm the order.";
-		} */
+		} //
 		
 
 	let cryptoInstructions = "";
@@ -183,4 +183,4 @@ document.getElementById("copy-order-btn").addEventListener("click" () => {
 	*Note: After the payment, send the hash of the transaction (TXID) via email to confirm the PostPac.*`;
 
 		return receipt;
-}
+}*/
