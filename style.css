@@ -42,7 +42,7 @@ body {
 	padding: 32px;
 	max-width: 680px;
 	width: 100%;
-	box-shadow: 0 0 30px rgba(0, 255, 156, 0.1);
+	box-shadow: 0 0 20px rgba(0, 255, 156, 0.1);
 }
 
 .ascii-logo {
