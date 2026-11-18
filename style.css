@@ -46,7 +46,7 @@ body {
 }
 
 .ascii-logo {
-	color: #ff00ff;
+	color: var(--term-cyan);
 	font-size: 11px;
 	line-height: 1.2;
 	overflow-x: auto;
