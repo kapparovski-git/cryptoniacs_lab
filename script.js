@@ -38,7 +38,7 @@ logoutBtn.addEventListener("click", () => {
 	shopDesktop.classList.add("hidden");
 	ttyScreen.classList.remove("hidden");
 });
-
+/*
 const searchInput = document.getElementById("search-input");
 const clearBtn = document.getElementById("clear-btn");
 const cards = document.querySelectorAll(".hardware-card");
