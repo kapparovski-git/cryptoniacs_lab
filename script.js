@@ -11,8 +11,8 @@ function enterSession(user, host) {
 	currentUser = user.trim() || "guest";
 	currentHost = host.trim() || "swiss-node";
 
-	document.getElementById("display-session").textContent = `${currentUser}@${currentHost}`;
-	document.getElementById("prompt-label").textContent = `${currentUser}@${currentHost}:~/cryptoniacs_lab$`;
+	document.getElementById("display-session").textContent = `${currentUser}@:~/cryptoniacs_lab$`;
+	document.getElementById("prompt-label").textContent = `${currentUser}@:~/cryptoniacs_lab$`;
 
 	document.querySelectorAll(".dynamic-host").forEach(el => {
 		el.textContent = currentHost;
@@ -25,8 +25,7 @@ function enterSession(user, host) {
 loginForm.addEventListener("submit", (e) => {
 	e.preventDefault();
 	enterSession(
-		document.getElementById("username").value,
-		document.getElementById("hostname").value
+		document.getElementById("username").value
 	);
 });
 
